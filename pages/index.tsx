@@ -16,7 +16,7 @@ export default function Home({ posts }) {
           <Image src="/img/author.png" className="h-16 w-16" alt="author" fill />
         </div>
         <h1 className="pt-3 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl">
-          Hi, I’m Chad Lumley.
+          Hi, I'm Chad Lumley.
         </h1>
         <p className="pt-3 font-body text-xl font-light text-primary dark:text-white">
           A senior front end engineer consultant enjoying life in Dallas, Texas.
@@ -65,7 +65,7 @@ export default function Home({ posts }) {
           </a>
         </div>
         <div className="">
-          {posts.map((post, i) => (
+          {posts.slice(0, 3).map((post, i) => (
             <Post key={`${i}-recent-posts`} post={post} />
           ))}
         </div>

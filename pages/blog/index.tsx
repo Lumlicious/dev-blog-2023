@@ -19,8 +19,7 @@ export default function Blog({ posts }) {
 
                 <div className="pt-3 sm:w-3/4">
                     <p className="font-body text-xl font-light text-primary dark:text-white">
-                        Articles, tutorials, snippets, rants, and everything else. Subscribe for
-                        updates as they happen.
+                        Articles, tutorials, snippets, rants, and everything else.
                     </p>
                 </div>
 

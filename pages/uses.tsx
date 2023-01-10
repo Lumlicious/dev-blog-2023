@@ -1,13 +1,19 @@
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { getSingleBlogPostBySlug } from "../lib/notion";
+import { FaLaptopCode } from "react-icons/fa";
 
-export default function Projects() {
+export default function Uses({ post }) {
   return (
     <div className="py-16 lg:py-20">
       {/* <div>
         <img src="/assets/img/icon-uses.png" alt="icon uses" />
       </div> */}
-      <h1 className="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl">
-        /uses
+      <h1 className="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl inline-flex">
+        <div><FaLaptopCode className="text-6xl text-yellow dark:text-yellow hover:text-secondary dark:hover:text-secondary transition-colors" /></div>
+        <div className="pl-4">/uses</div>
       </h1>
       <div className="pr-2 pt-3">
         <span className="font-body text-xl font-light text-primary dark:text-white">
@@ -23,41 +29,41 @@ export default function Projects() {
         </span>
       </div>
 
-      <div className="pt-16 lg:pt-20">
-        <h3 className="pb-8 font-body text-2xl font-semibold text-primary dark:text-white">
-          Computer + Workspace
-        </h3>
-        <ul className="list-disc pl-10">
-          <li className="font-body text-lg font-light text-primary dark:text-white">
-            <span className="font-medium">Computer:</span>
-            I use a 2019 16"
-            <a href="/"
-              className="font-medium text-green underline hover:text-secondary dark:text-green-light dark:hover:text-secondary">MacBook
-              Pro</a>
-            (i9/32GB/512gb) for everything (work + personal). The physical escape
-            key and fixed keyboard is amazing.
-          </li>
-          <li className="pt-5 font-body text-lg font-light text-primary dark:text-white">
-            <span className="font-medium">Chair:</span>
-            When I sit, I sit on an
-            <a href="/"
-              className="font-medium text-green underline hover:text-secondary dark:text-green-light dark:hover:text-secondary">Herman
-              Miller Mirra 2</a>, but I stand almost 100% of the time, so the chair doesn’t do me
-            much good.
-          </li>
-          <li className="pt-5 font-body text-lg font-light text-primary dark:text-white">
-            <span className="font-medium">Desk:</span>
-            My desk is a
-            <a href="/"
-              className="font-medium text-green underline hover:text-secondary dark:text-green-light dark:hover:text-secondary">Fully
-              Jarvis standing desk</a>
-            (which I love) with the Bamboo top (which I don't recommend). If
-            you're looking for a great sit-stand desk, I highly recommend Jarvis.
-            Also, purchase directly from Fully vs. Amazon. Fully's customer
-            support is incredible.
-          </li>
-        </ul>
+      <div className="prose prose max-w-none border-b border-grey-lighter py-8 dark:prose-dark sm:py-12">
+        <ReactMarkdown
+          children={post.markdown}
+          components={{
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '')
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  children={String(children).replace(/\n$/, '')}
+                  style={vscDarkPlus}
+                  language={match[1]}
+                  PreTag="div"
+                  {...props}
+                />
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              )
+            }
+          }}
+        />
       </div>
     </div>
   );
 }
+
+export const getStaticProps = async ({ params }) => {
+  const post = await getSingleBlogPostBySlug('uses-page');
+
+  return {
+    props: {
+      post,
+    },
+    revalidate: 60,
+  };
+};
+
