@@ -14,7 +14,7 @@ export default function Post({ post }) {
                 </p>
                 <span className="font-body text-grey dark:text-white">//</span>
                 <p className="pl-2 font-body font-light text-primary dark:text-white">
-                    4 min read
+                    {`${Math.ceil(parseInt(post.wordCount) / 200)} min read`}
                 </p>
             </div>
         </div>
