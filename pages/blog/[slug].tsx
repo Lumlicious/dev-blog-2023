@@ -24,9 +24,8 @@ export default function Post({ post }) {
         <div className="border-b border-grey-lighter pb-8 sm:pb-12">
           {
             post.metadata.tags.map((tag, i) => (
-              <Tag name={tag.name} color={tag.color} />))
+              <Tag key={`${i}-tags`} name={tag.name} color={tag.color} />))
           }
-
           <h2
             className="block font-body text-3xl font-semibold leading-tight text-primary dark:text-white sm:text-4xl md:text-5xl">
             {post.metadata.title}

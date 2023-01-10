@@ -1,18 +1,21 @@
 import Link from "next/link";
 import Post from "../../components/post";
 import { getAllPublished } from "../../lib/notion";
+import { FaRegNewspaper } from "react-icons/fa";
+
 
 export default function Blog({ posts }) {
     return (
         <div className="container mx-auto">
             <div className="py-16 lg:py-20">
                 <div>
-                    {/* <img src="/assets/img/icon-blog.png" alt="icon envelope" /> */}
+                    <h1 className="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl inline-flex">
+                        <div><FaRegNewspaper className="text-6xl text-yellow dark:text-yellow hover:text-secondary dark:hover:text-secondary transition-colors" /></div>
+                        <div className="pl-4">Blog</div>
+                    </h1>
                 </div>
 
-                <h1 className="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl">
-                    Blog
-                </h1>
+
 
                 <div className="pt-3 sm:w-3/4">
                     <p className="font-body text-xl font-light text-primary dark:text-white">
@@ -23,8 +26,8 @@ export default function Blog({ posts }) {
 
 
                 <div className="pt-8 lg:pt-12">
-                    {posts.map((post) => (
-                        <Post post={post} />
+                    {posts.map((post, i) => (
+                        <Post key={`${i}-post-list`} post={post} />
                     ))}
                 </div>
 
