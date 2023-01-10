@@ -1,8 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
+    const { systemTheme, theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, [])
+
+    const test = () => {
+        console.log('clicked!')
+    }
+
+    const renderThemeChanger = () => {
+        if (!mounted) return null;
+
+        const currentTheme = theme === "system" ? systemTheme : theme;
+
+        if (currentTheme === "dark") {
+            return (
+                <div className="cursor-pointer text-3xl text-primary dark:text-white" role="button" onClick={() => setTheme('light')}>
+
+                    <BsFillSunFill />
+                </div>
+            )
+        }
+
+        else {
+            return (
+                <div className="cursor-pointer text-3xl text-primary dark:text-white" role="button" onClick={() => setTheme('dark')} >
+
+                    <BsFillMoonStarsFill />
+                </div>
+            )
+        }
+    };
+
     return (
         <>
             <div className="container mx-auto">
@@ -16,6 +53,7 @@ export default function Navigation() {
                         </p>
                     </Link>
                     <div className="flex items-center lg:hidden">
+
                         <i className="bx mr-8 cursor-pointer text-3xl text-primary dark:text-white"></i>
 
                         <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +101,7 @@ export default function Navigation() {
                             </li>
 
                             <li>
-                                <i className="bx cursor-pointer text-3xl text-primary dark:text-white"></i>
+                                {renderThemeChanger()}
                             </li>
                         </ul>
                     </div>
