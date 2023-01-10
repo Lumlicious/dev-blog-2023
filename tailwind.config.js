@@ -20,6 +20,7 @@ module.exports = {
 
     colors: {
       transparent: "transparent",
+      "primary-light": "#ced8e2",
       primary: "#072344",
       secondary: "#00aaa1",
       "green-light": "#cceeec",
@@ -38,6 +39,16 @@ module.exports = {
       "grey-lighter": "#eceef1",
       "grey-light": "#ccd7e0",
       grey: "#adb6c4",
+      "amber-light": "rgb(254 243 199)",
+      amber: "rgb(217 119 6)",
+      "orange-light": "rgb(254 215 170)",
+      orange: "rgb(194 65 12)",
+      "purple-light": "rgb(243 232 255)",
+      purple: "rgb(168 85 247)",
+      "pink-light": " rgb(252 231 243)",
+      pink: "rgb(244 114 182)",
+      "red-light": "rgb(254 202 202)",
+      red: "rgb(220 38 38)"
     },
 
     border: {

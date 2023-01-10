@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Tag from "./tag";
 
 export default function Post({ post }) {
     return (
         <div className="border-b border-grey-lighter pb-8 pt-8">
-            <span
-                className="mb-4 inline-block rounded-full bg-green-light px-2 py-1 font-body text-sm text-green">category</span>
+            {post.tags && post.tags.map((tag, i) => (
+                <Tag name={tag.name} color={tag.color} />
+            ))}
             <Link href={`/blog/${post.slug}`}
                 className="block font-body text-lg font-semibold text-primary transition-colors hover:text-green dark:text-white dark:hover:text-secondary">{post.title}</Link>
             <p className="font-body font-light text-primary dark:text-white pt-2">{post.description}</p>
