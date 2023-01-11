@@ -11,23 +11,21 @@ export default function Home({ posts }) {
   if (!posts) return <h1>No posts</h1>;
   return (
     <>
-      <div className="border-b border-grey-lighter py-16 lg:py-20">
-        <div className="relative h-16 w-16">
-          <Image src="/img/author.png" className="h-16 w-16" alt="author" fill />
+      <div className="border-b border-grey-lighter py-16 lg:py-20 md:flex">
+        <div className="relative h-64 w-52 mx-auto">
+          <Image src="/img/NewPixelMeFull.png" alt="author" fill />
         </div>
-        <h1 className="pt-3 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl">
-          Hi, I'm Chad Lumley.
-        </h1>
-        <p className="pt-3 font-body text-xl font-light text-primary dark:text-white">
-          A senior front end engineer consultant enjoying life in Dallas, Texas.
-        </p>
-        {/* <a href="/"
-          className="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl">
-          Say Hello!
-        </a> */}
+        <div className="self-end">
+          <h1 className="pt-3 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl">
+            Hi, I'm Chad Lumley.
+          </h1>
+          <p className="pt-3 font-body text-xl font-light text-primary dark:text-white">
+            A senior front end engineer consultant enjoying life in Dallas, Texas.
+          </p>
+        </div>
       </div>
 
-      <div className="border-b border-grey-lighter py-16 lg:py-20">
+      {/* <div className="border-b border-grey-lighter py-16 lg:py-20">
         <div className="flex items-center pb-6">
           <FaBook className="text-4xl text-yellow dark:text-white" />
           <h3 className="ml-3 font-body text-2xl font-semibold text-primary dark:text-white">
@@ -36,10 +34,9 @@ export default function Home({ posts }) {
         </div>
         <div>
           <p className="font-body font-light text-primary dark:text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Nibh mauris cursus
-            mattis molestie. Et leo duis ut diam. Sit amet tellus cras adipiscing
-            enim eu turpis. Adipiscing at in tellus integer feugiat.
+            I've been in software engineering for over a decade, but focused on the
+            front end for the past 8 years. I've been a consultant at 8+ large, enterprise companies
+
             <br />
             <br />
             Maecenas accumsan lacus vel facilisis. Eget egestas purus viverra
@@ -50,7 +47,7 @@ export default function Home({ posts }) {
             vitae justo eget magna fermentum iaculis eu non.
           </p>
         </div>
-      </div>
+      </div> */}
 
       <div className="py-16 lg:py-20">
         <div className="flex items-center pb-6">

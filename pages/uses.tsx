@@ -29,7 +29,7 @@ export default function Uses({ post }) {
         </span>
       </div>
 
-      <div className="prose prose max-w-none border-b border-grey-lighter py-8 dark:prose-dark sm:py-12">
+      <div className="prose prose max-w-none py-8 dark:prose-dark sm:py-12">
         <ReactMarkdown
           children={post.markdown}
           components={{

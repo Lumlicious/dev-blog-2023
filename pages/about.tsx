@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { getSingleBlogPostBySlug } from "../lib/notion";
-import { FaBriefcase } from "react-icons/fa";
+import { FaChild } from "react-icons/fa";
 
 export default function Resume({ post }) {
   return (
@@ -12,12 +12,12 @@ export default function Resume({ post }) {
         <img src="/assets/img/icon-uses.png" alt="icon uses" />
       </div> */}
       <h1 className="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl inline-flex">
-        <div><FaBriefcase className="text-6xl text-yellow dark:text-yellow hover:text-secondary dark:hover:text-secondary transition-colors" /></div>
-        <div className="pl-4">Resume</div>
+        <div><FaChild className="text-6xl text-yellow dark:text-yellow hover:text-secondary dark:hover:text-secondary transition-colors" /></div>
+        <div className="pl-4">About Me</div>
       </h1>
       <div className="pr-2 pt-3">
         <span className="font-body text-xl font-light text-primary dark:text-white">
-          A summary of all my work experience.
+          Some interesting facts about me and what I've been up to.
         </span>
       </div>
 

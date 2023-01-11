@@ -26,7 +26,6 @@ export default function Navigation() {
         if (currentTheme === "dark") {
             return (
                 <div className="cursor-pointer text-3xl text-primary dark:text-white" role="button" onClick={() => setTheme('light')}>
-
                     <BsFillSunFill />
                 </div>
             )
@@ -47,17 +46,14 @@ export default function Navigation() {
             <div className="container mx-auto">
                 <div className="flex items-center justify-between py-6 lg:py-10">
                     <Link href="/" className="flex items-center">
-                        {/* <div className="mr-2">
-                            <Image src="/img/logo.svg" alt="logo" width='30' height='30' />
-                        </div> */}
+                        <div className="mr-2 rounded-full overflow-hidden">
+                            <Image src="/img/NewPixelMeFull.png" alt="logo" width='50' height='50' />
+                        </div>
                         <p className="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
                             Chad Lumley
                         </p>
                     </Link>
                     <div className="flex items-center lg:hidden">
-
-                        <i className="bx mr-8 cursor-pointer text-3xl text-primary dark:text-white"></i>
-
                         <FaHamburger className="text-4xl cursor-pointer fill-current text-primary dark:text-white" onClick={() => setNavShow(true)} />
                     </div>
                     <div className="hidden lg:block">
@@ -91,8 +87,8 @@ export default function Navigation() {
                                 <div
                                     className="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
                                 </div>
-                                <Link href="/resume"
-                                    className="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Resume</Link>
+                                <Link href="/about"
+                                    className="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">About</Link>
                             </li>
 
                             <li>
@@ -124,7 +120,7 @@ export default function Navigation() {
                         </li>
 
                         <li className="">
-                            <Link href="/resume" className="mb-3 block px-2 font-body text-lg font-medium text-white" onClick={() => setNavShow(false)}>Resume</Link>
+                            <Link href="/about" className="mb-3 block px-2 font-body text-lg font-medium text-white" onClick={() => setNavShow(false)}>About</Link>
                         </li>
                     </ul>
                 </div>
