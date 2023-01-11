@@ -5,9 +5,9 @@ export default function Footer() {
         <div className="container mx-auto">
             <div className="flex flex-col items-center justify-between border-t border-grey-lighter py-10 sm:flex-row sm:py-12">
                 <div className="mr-auto flex flex-col items-center sm:flex-row">
-                    <a href="/" className="mr-auto sm:mr-6">
+                    {/* <a href="/" className="mr-auto sm:mr-6">
                         <img src="/assets/img/logo.svg" alt="logo" />
-                    </a>
+                    </a> */}
                     <p className="pt-5 font-body font-light text-primary dark:text-white sm:pt-0">
                         {`${`© ${new Date().getFullYear()}`} Chad Lumley`}
                     </p>
